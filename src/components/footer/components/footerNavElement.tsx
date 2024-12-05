@@ -8,6 +8,7 @@ interface Props {
   icon: ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>;
   href: string;
   hideLabel?: boolean;
+  pathname: string;
 }
 
 export const FooterNavElement: React.FC<Props> = ({
@@ -15,7 +16,9 @@ export const FooterNavElement: React.FC<Props> = ({
   icon: Icon,
   href,
   hideLabel = false,
+  pathname
 }) => {
+  const isActive = pathname === href;
   return (
     <Link
       href={href}
@@ -26,10 +29,21 @@ export const FooterNavElement: React.FC<Props> = ({
         'px-4 py-2',
         // hover
         'hover:bg-slate-600 rounded-lg transition-colors',
+        // active
+        isActive && 'bg-slate-600',
       ])}
     >
-      <Icon size={24} stroke={2} />
-      {!hideLabel && <span className="text-xs mt-1 capitalize">{label}</span>}
+      <Icon size={24} stroke={2} color={isActive ? 'white' : 'darkgray'} />
+      {!hideLabel && (
+        <span
+          className={clsx(
+            'text-xs mt-1 capitalize',
+            isActive ? 'text-white' : 'text-[#a9a9a9]'
+          )}
+        >
+          {label}
+        </span>
+      )}
     </Link>
   );
 };

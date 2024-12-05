@@ -1,8 +1,13 @@
+'use client';
+
 import clsx from 'clsx';
 import { footerNav } from './constants/footerNav';
 import { FooterNavElement } from './components/footerNavElement';
+import { usePathname } from 'next/navigation';
 
 export const Footer = () => {
+  const pathname = usePathname();
+
   return (
     <footer
       className={clsx([
@@ -15,7 +20,7 @@ export const Footer = () => {
       ])}
     >
       {footerNav.map((element) => (
-        <FooterNavElement key={element.label} {...element} />
+        <FooterNavElement key={element.label} pathname={pathname}{...element} />
       ))}
     </footer>
   );
