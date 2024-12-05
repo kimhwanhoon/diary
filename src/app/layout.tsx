@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Header } from '@/components/header/header';
 import { Footer } from '@/components/footer/footer';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Diary App',
@@ -19,7 +20,9 @@ export default function RootLayout({
       <body className="antialiased bg-[#EAEBED]">
         <Header />
         {children}
-        <Footer />
+        <Suspense>
+          <Footer />
+        </Suspense>
       </body>
     </html>
   );
