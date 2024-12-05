@@ -2,6 +2,7 @@ import type { Icon, IconProps } from '@tabler/icons-react';
 import type { ForwardRefExoticComponent, RefAttributes } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
+import { darkgray } from '@/theme/colors';
 
 interface Props {
   label: string;
@@ -33,12 +34,12 @@ export const FooterNavElement: React.FC<Props> = ({
         isActive && 'bg-slate-600',
       ])}
     >
-      <Icon size={24} stroke={2} color={isActive ? 'white' : 'darkgray'} />
+      <Icon size={24} stroke={2} color={isActive ? 'white' : darkgray.hex} />
       {!hideLabel && (
         <span
           className={clsx(
             'text-xs mt-1 capitalize',
-            isActive ? 'text-white' : 'text-[#a9a9a9]'
+            isActive ? 'text-white' : darkgray.className.color
           )}
         >
           {label}
