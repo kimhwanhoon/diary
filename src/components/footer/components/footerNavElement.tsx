@@ -28,7 +28,7 @@ export const FooterNavElement: React.FC<Props> = ({
         'hover:bg-slate-600 rounded-lg transition-colors',
       ])}
     >
-      <Icon size={24} stroke={1.5} />
+      <Icon size={24} stroke={2} />
       {!hideLabel && <span className="text-xs mt-1 capitalize">{label}</span>}
     </Link>
   );

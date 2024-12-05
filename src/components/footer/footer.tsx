@@ -10,6 +10,8 @@ export const Footer = () => {
         'bg-slate-700 text-white p-4 flex justify-center items-center',
         // position
         'fixed bottom-0 left-0 right-0',
+        // shadow
+        'shadow-t',
       ])}
     >
       {footerNav.map((element) => (
