@@ -1,7 +1,7 @@
-import React from 'react';
+import { Home } from '@/components/home/home';
 
-function Home() {
-  return <div>Home</div>;
+async function HomePage() {
+  return <Home />;
 }
 
-export default Home;
+export default HomePage;
