@@ -1,7 +1,5 @@
+import { Button } from '@mantine/core';
+
 export const WriteButton = () => {
-  return (
-    <button className="bg-[#333] text-white p-2 rounded-md w-full">
-      Write
-    </button>
-  );
+  return <Button fullWidth>Write</Button>;
 };

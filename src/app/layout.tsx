@@ -1,13 +1,13 @@
-import type { Metadata } from 'next';
-// import localFont from "next/font/local";
-import './globals.css';
+import { metadata } from '@/metadata/home/metadata';
+
 import { Header } from '@/components/header/header';
 import { Footer } from '@/components/footer/footer';
+import { Suspense } from 'react';
+import { ThemeProvider } from '@/theme/themeProvider';
 
-export const metadata: Metadata = {
-  title: 'Diary App',
-  description: 'Diary App',
-};
+import './globals.css';
+
+export { metadata };
 
 export default function RootLayout({
   children,
@@ -17,9 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased bg-[#EAEBED]">
-        <Header />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <Header />
+          {children}
+          <Suspense>
+            <Footer />
+          </Suspense>
+        </ThemeProvider>
       </body>
     </html>
   );

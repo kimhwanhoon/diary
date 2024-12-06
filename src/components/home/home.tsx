@@ -1,11 +1,9 @@
-import { Hero } from './components/hero';
-import { WriteButton } from './components/writeButton';
+import { SquareButton } from '../buttons/squareButton/squareButton';
 
 export const Home = () => {
   return (
     <main className="p-4 space-y-8">
-      <Hero />
-      <WriteButton />
+      <SquareButton size="sm">Write a diary</SquareButton>
     </main>
   );
 };
